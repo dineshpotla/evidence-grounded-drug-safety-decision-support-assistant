@@ -1,0 +1,11 @@
+warfarin
+amiodarone
+valproate
+metformin
+digoxin
+clarithromycin
+isotretinoin
+dapsone
+benzoyl peroxide
+tretinoin
+clindamycin

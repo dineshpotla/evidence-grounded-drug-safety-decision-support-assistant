@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Drug Safety Benchmark Case",
+  "type": "object",
+  "required": ["id", "question", "intent", "expected_risk_level", "slots"],
+  "properties": {
+    "id": {"type": "string"},
+    "question": {"type": "string"},
+    "intent": {
+      "type": "string",
+      "enum": ["interaction", "pregnancy", "renal", "patient_specific", "general"]
+    },
+    "expected_risk_level": {
+      "type": "string",
+      "enum": ["Low", "Moderate", "High"]
+    },
+    "slots": {
+      "type": "object",
+      "properties": {
+        "drug": {"type": ["string", "null"]},
+        "drug_a": {"type": ["string", "null"]},
+        "drug_b": {"type": ["string", "null"]},
+        "age_group": {"type": ["string", "null"]},
+        "pregnancy_status": {"type": ["string", "null"]},
+        "trimester": {"type": ["string", "null"]},
+        "kidney_status": {"type": ["string", "null"]},
+        "liver_status": {"type": ["string", "null"]},
+        "current_meds": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "required_citations": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,37 @@
+prompts:
+  - id: interaction_v2
+    intent: interaction
+    version: "2.1"
+    directory: prompts/v2
+    template_file: interaction_template.md
+    last_eval: "2026-03-01"
+    hallucination_rate: 0.042
+    citation_precision: 0.96
+    owner: Dinesh
+  - id: pregnancy_v2
+    intent: pregnancy
+    version: "2.1"
+    directory: prompts/v2
+    template_file: pregnancy_template.md
+    last_eval: "2026-03-01"
+    hallucination_rate: 0.048
+    citation_precision: 0.95
+    owner: Dinesh
+  - id: renal_v2
+    intent: renal
+    version: "2.1"
+    directory: prompts/v2
+    template_file: renal_template.md
+    last_eval: "2026-03-01"
+    hallucination_rate: 0.046
+    citation_precision: 0.95
+    owner: Dinesh
+  - id: general_safety_v2
+    intent: patient_specific
+    version: "2.1"
+    directory: prompts/v2
+    template_file: general_safety_template.md
+    last_eval: "2026-03-01"
+    hallucination_rate: 0.044
+    citation_precision: 0.95
+    owner: Dinesh

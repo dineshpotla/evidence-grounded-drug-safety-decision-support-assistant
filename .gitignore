@@ -1,0 +1,17 @@
+.env
+.venv/
+.python-version
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+src/*.egg-info/
+src/**/*.egg-info/
+logs/
+run/
+artifacts/
+evaluation/results/
+Resume.pdf
