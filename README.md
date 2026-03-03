@@ -13,6 +13,7 @@ Patient-specific drug safety assistant using OpenFDA labels, PubMed evidence, an
   - Minimal-context follow-up questioning (max 3 missing slots)
   - Hallucination guard (citation checks, support consistency, PRR numeric checks)
   - Explainable risk scoring (label + literature + FAERS + patient modifiers)
+  - Dynamic prompting for extraction, retrieval reranking, claim generation, and LLM judging
 - Prompt governance:
   - Versioned prompt templates (`prompts/v1`, `prompts/v2`)
   - Prompt registry (`prompt_registry.yaml`)

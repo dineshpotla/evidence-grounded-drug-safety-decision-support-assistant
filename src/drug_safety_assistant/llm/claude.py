@@ -7,6 +7,7 @@ import requests
 
 from ..config import settings
 from ..types import EvidenceChunk, GeneratedClaim
+from .dynamic_prompting import claim_policy_text, rerank_policy_text
 
 try:
     import anthropic
@@ -169,6 +170,7 @@ class ClaudeAgent:
             "Rerank evidence chunks for the drug safety question and return only JSON.\n"
             'JSON schema: {"ranked_chunk_ids": ["..."]}.\n'
             f"Select exactly {top_k} chunk IDs in descending relevance.\n"
+            f"{rerank_policy_text(question=question, chunks=chunks, top_k=top_k)}\n"
             f"Question: {question}\n"
             f"Chunks: {json.dumps(serialized)}"
         )
@@ -188,6 +190,7 @@ class ClaudeAgent:
             "Return only JSON with this schema: "
             '{"claims":[{"text":"...","citation_ids":["..."]}]}.\n'
             "Rules: include citation_ids for every claim, no dosing instructions.\n"
+            f"{claim_policy_text(question=question, chunks=chunks)}\n"
             f"Question: {question}\n"
             f"Evidence: {json.dumps(serialized)}"
         )

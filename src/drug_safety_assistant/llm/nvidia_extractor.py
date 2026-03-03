@@ -10,6 +10,7 @@ from ..config import settings
 from ..intents import classify_intent
 from ..types import ExtractedEntities, Intent, SafetyRequest
 from ..utils.clinical_text import normalize_drug_name
+from .dynamic_prompting import extraction_directives
 
 
 class NvidiaIntentExtractor:
@@ -223,6 +224,7 @@ class NvidiaIntentExtractor:
             '"drug_mentions":[],"age_group":null,"pregnancy_status":null,'
             '"trimester":null,"kidney_status":null,"liver_status":null}. '
             "No markdown. No prose.\n"
+            f"{extraction_directives(question)}\n"
             f"Question: {question}"
         )
 

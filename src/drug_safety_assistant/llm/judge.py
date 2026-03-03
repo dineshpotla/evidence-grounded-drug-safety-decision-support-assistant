@@ -8,6 +8,7 @@ from typing import Any
 import requests
 
 from ..config import settings
+from .dynamic_prompting import judge_policy_text
 
 
 @dataclass(frozen=True)
@@ -138,6 +139,7 @@ class LLMAnswerJudge:
             "- Lower clinical_helpfulness_score if monitoring advice is weak.\n"
             "- Lower conciseness_score if verbose, repetitive, or unclear.\n"
             "- Set hallucination_detected=true if likely unsupported claims appear.\n"
+            f"{judge_policy_text(question=question, response=response)}\n"
             f"Question: {question}\n"
             f"Answer JSON: {json.dumps(compact)}"
         )
